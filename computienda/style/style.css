@@ -32,9 +32,6 @@ body {
     background-repeat: no-repeat;
 }
 
-.my-header {
-    background-color: aqua !important;
-}
 
 /* NAV */ 
 
@@ -57,14 +54,14 @@ body {
 
 .contenedor ul {
     display: flex;
-    justify-content: space-between; /* Cambio: espacio entre elementos */
+    justify-content: center; /* Cambio: centrar elementos horizontalmente */
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
 .contenedor li {
-    flex: 1; /* Cambio: cada elemento ocupa igual espacio */
+    flex: 0 0 auto; /* Cambio: eliminar flex-grow y flex-shrink */
     text-align: center;
 }
 
@@ -72,4 +69,14 @@ body {
     display: block;
     text-decoration: none;
     text-align: center;
+}
+
+.contenedor-1 {
+    background-color: aqua;
+    padding: 0;
+}
+
+.contenedor-2 {
+    background-color: pink;
+    padding: 0;
 }
