@@ -4,7 +4,7 @@
     <div>
         <nav id="header" class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.php"><img src="img/logo.png" alt="">Computienda</a>
+                <a class="navbar-brand" href="index.php"><img src="img/logo.png" alt="">  COMPUTIENDA</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -27,7 +27,7 @@
     <div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <span class="navbar-brand mb-0 h1">Categorías</span>
+                <span class="navbar-brand mb-0 h1">CATEGORIAS</span>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav nav-fill w-100">
                         <li class="nav-item">
