@@ -16,10 +16,15 @@ html {
 }
 
 body {
-    font-family: 'Raleway', sans-serif;
     letter-spacing: 0.02em;
     max-width: 100%;
     overflow-x: hidden;
+}
+
+h1 {
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: white !important;
 }
 
 /* HEADER */   
@@ -38,6 +43,7 @@ body {
 .nav-link {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+    color: white !important;
 }
 
 .contenedor {
@@ -72,11 +78,15 @@ body {
 }
 
 .contenedor-1 {
-    background-color: aqua;
+    background-color: black;
     padding: 0;
 }
 
 .contenedor-2 {
-    background-color: pink;
+    background-color: black;
     padding: 0;
+}
+
+.navbar-brand {
+    padding-left: 10px;
 }
