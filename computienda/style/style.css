@@ -33,16 +33,22 @@ body {
 }
 
 .my-header {
-    background-color: aqua;
+    background-color: aqua !important;
 }
 
 /* NAV */ 
+
+.nav-link {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
 
 .contenedor {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    justify-content: space-between;
 }
 
 .contenedor nav {
