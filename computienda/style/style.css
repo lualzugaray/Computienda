@@ -1,27 +1,25 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-img, svg {
+img,
+svg {
     max-width: 100%;
 }
 
-* {
-    box-sizing: border-box;
-  }
-  
-  .columna {
+.columna {
     float: left;
     width: 25%;
     padding-right: 1px;
-  }
-  
-  .fila::after {
+}
+
+.fila::after {
     content: "";
     clear: both;
     display: table;
-  }
+}
 
 /* GENERAL */
 
@@ -37,6 +35,11 @@ body {
     overflow-x: hidden;
 }
 
+p {
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
 h1 {
     font-size: 2.6rem;
     font-weight: 600;
@@ -49,10 +52,10 @@ h1 {
 .contenedor {
     width: 95%;
     margin: 0 auto;
-    
+
 }
 
-/* HEADER */   
+/* HEADER */
 
 .inicio {
     height: 400px;
@@ -64,7 +67,7 @@ h1 {
 }
 
 
-/* NAV */ 
+/* NAV */
 
 .nav-link {
     padding-left: 0.5rem;
@@ -79,7 +82,7 @@ h1 {
     align-items: center;
     width: 100%;
     justify-content: space-between;
-    
+
 }
 
 .contenedor nav {
@@ -88,14 +91,16 @@ h1 {
 
 .contenedor ul {
     display: flex;
-    justify-content: center; /* Cambio: centrar elementos horizontalmente */
+    justify-content: center;
+    /* Cambio: centrar elementos horizontalmente */
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
 .contenedor li {
-    flex: 0 0 auto; /* Cambio: eliminar flex-grow y flex-shrink */
+    flex: 0 0 auto;
+    /* Cambio: eliminar flex-grow y flex-shrink */
     text-align: center;
 }
 
@@ -124,22 +129,15 @@ h1 {
     margin-left: 60px;
 }
 
-#presentacion{
+/* PRESENTACIÓN */
+
+#presentacion {
     text-align: center;
     padding: 2% 0% 20% 0%;
     font-family: 'Nova Square', cursive;
 }
 
-#presentacion h2{
+#presentacion h2 {
     text-align: center;
     font-family: 'Squada One', cursive;
-}
-
-.card{
-    padding: 2%;
-    border-radius: 20px;
-    background: #ffffffac;
-    text-align: center;
-    box-shadow: 2px 3px 3px rgb(0 0 0 / 20%);
-    margin-bottom: 5%;
 }
