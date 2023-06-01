@@ -1,7 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 
 img, svg {
     max-width: 100%;
 }
+
+* {
+    box-sizing: border-box;
+  }
+  
+  .columna {
+    float: left;
+    width: 25%;
+    padding-right: 1px;
+  }
+  
+  .fila::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
 
 /* GENERAL */
 
@@ -24,6 +44,12 @@ h1 {
     font-family: 'Nova Square', cursive;
     padding-top: 100px;
     padding-left: 60px;
+}
+
+.contenedor {
+    width: 95%;
+    margin: 0 auto;
+    
 }
 
 /* HEADER */   
@@ -96,4 +122,24 @@ h1 {
 
 .btn-danger {
     margin-left: 60px;
+}
+
+#presentacion{
+    text-align: center;
+    padding: 2% 0% 20% 0%;
+    font-family: 'Nova Square', cursive;
+}
+
+#presentacion h2{
+    text-align: center;
+    font-family: 'Squada One', cursive;
+}
+
+.card{
+    padding: 2%;
+    border-radius: 20px;
+    background: #ffffffac;
+    text-align: center;
+    box-shadow: 2px 3px 3px rgb(0 0 0 / 20%);
+    margin-bottom: 5%;
 }
