@@ -52,7 +52,6 @@ h1 {
 .contenedor {
     width: 95%;
     margin: 0 auto;
-
 }
 
 /* HEADER */
@@ -133,11 +132,12 @@ h1 {
 
 #presentacion {
     text-align: center;
-    padding: 2% 0% 20% 0%;
+    padding: 2% 0% 2% 0%;
     font-family: 'Nova Square', cursive;
 }
 
-#presentacion h2 {
+#presentacion h2,
+#productos h2 {
     text-align: center;
     font-family: 'Squada One', cursive;
 }

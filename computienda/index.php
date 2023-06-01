@@ -18,7 +18,7 @@ include_once "header.php";
             ¡Nos apasiona unirnos a los jugadores para <br> desafiar los límites sin miedo y luchar mientras nos elevamos a la gloria <br> máxima!</p>
         <div class="container">
             <div class="fila">
-                <div class="columna" >
+                <div class="columna">
                     <img src="img/hyperx.jpg" width="150" height="150">
                 </div>
                 <div class="columna">
@@ -32,7 +32,12 @@ include_once "header.php";
                 </div>
             </div>
         </div>
+    </div>
+</section>
 
+<section id="productos">
+    <div class="contenedor">
+        <h2> <span>CATÁLOGO DE PRODUCTOS</span></h2>
     </div>
 </section>
 
