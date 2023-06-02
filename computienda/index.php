@@ -39,7 +39,37 @@ include_once "header.php";
     <div class="contenedor">
         <h2> <span>CATÁLOGO DE PRODUCTOS</span></h2>
     </div>
+
+    <?php
+    if(mysqli_connect('localhost','root','','productos')){
+                    //servidor, usuario servidor, contraseña, nombre de la base de datos		
+
+        $con = mysqli_connect('localhost','root','','productos');
+        //guardo la conexion en una variable
+        
+        $consulta = "SELECT idProducto, nombre, precio, fotoProducto FROM productos";
+        //guardo la "consulta SQL" en otra variable
+        
+        
+        if($resultado = mysqli_query($con, $consulta)){
+            //guardo el resultado de la "consulta SQL"
+
+            while($fila = mysqli_fetch_array($resultado)){
+                //guardo cada fila de la "consulta SQL"
+
+                echo "<td><img src='img/imgProductos/$fila[fotoProducto]' WIDTH=90 HEIGHT=70/></td>";
+                    echo "<a>$fila[nombre]</a>";
+                    echo "<a>$$fila[precio]</a>";
+
+            }
+        }
+    }else{
+        echo "<h1>No hay conexion</h1>";
+    }
+
+    ?>
 </section>
+
 
 
 
