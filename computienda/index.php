@@ -12,7 +12,7 @@ include_once "header.php";
 </section>
 
 <section id="presentacion">
-    <div class="contenedor">
+    <div class="container">
         <h2> <span>EQUIPO DE JUEGOS</span></h2>
         <p>Empresa líder en tarjetas madre, tarjetas gráficas, laptops,hardware de juegos <br> y sistemas de alto rendimiento.
             ¡Nos apasiona unirnos a los jugadores para <br> desafiar los límites sin miedo y luchar mientras nos elevamos a la gloria <br> máxima!</p>
@@ -36,11 +36,11 @@ include_once "header.php";
 </section>
 
 <section id="productos">
-    <div class="contenedor">
+    <div class="container">
         <h2><span>CATÁLOGO DE PRODUCTOS</span></h2>
     </div>
 
-    <div class="contenedor">
+    <div class="container d-flex justify-content-center mt-50 mb-50">
         <div class="row justify-content-center">
             <?php
             if (mysqli_connect('localhost', 'root', '', 'productos')) {
@@ -50,7 +50,7 @@ include_once "header.php";
 
                 if ($resultado = mysqli_query($con, $consulta)) {
                     while ($fila = mysqli_fetch_array($resultado)) {
-                        echo "<div class='col-md-4'>";
+                        echo "<div class='col-md-4 mt-2'>";
                         echo "<div class='card'>";
                         echo "<form method='post' action='index.php?accion=meter&codigo=<?php echo $fila[idProducto]; ?>'>";
                         echo "<div class='card-body text-center'>";
