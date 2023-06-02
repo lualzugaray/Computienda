@@ -141,3 +141,58 @@ h1 {
     text-align: center;
     font-family: 'Squada One', cursive;
 }
+
+
+/* PRODUCTOS */
+
+#productos .mt-50 {
+    margin-top: 50px;
+}
+
+#productos .mb-50 {
+    margin-bottom: 50px;
+}
+
+#productos .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .1875rem;
+    width: 300px;
+}
+
+#productos .card-img-actions {
+    position: relative;
+}
+
+#productos .card-body {
+    flex: 1 1 auto;
+    text-align: center;
+
+}
+
+#productos .card-body h6 {
+    font-size: 14px;
+}
+
+#productos .card-body h3 {
+    font-size: 18px;
+}
+
+#productos .cart-action {
+    margin-top: 10px; 
+}
+
+#productos .card-img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+

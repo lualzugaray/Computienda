@@ -37,37 +37,46 @@ include_once "header.php";
 
 <section id="productos">
     <div class="contenedor">
-        <h2> <span>CATÁLOGO DE PRODUCTOS</span></h2>
+        <h2><span>CATÁLOGO DE PRODUCTOS</span></h2>
     </div>
 
-    <?php
-    if(mysqli_connect('localhost','root','','productos')){
-                    //servidor, usuario servidor, contraseña, nombre de la base de datos		
+    <div class="contenedor">
+        <div class="row justify-content-center">
+            <?php
+            if (mysqli_connect('localhost', 'root', '', 'productos')) {
+                $con = mysqli_connect('localhost', 'root', '', 'productos');
 
-        $con = mysqli_connect('localhost','root','','productos');
-        //guardo la conexion en una variable
-        
-        $consulta = "SELECT idProducto, nombre, precio, fotoProducto FROM productos";
-        //guardo la "consulta SQL" en otra variable
-        
-        
-        if($resultado = mysqli_query($con, $consulta)){
-            //guardo el resultado de la "consulta SQL"
+                $consulta = "SELECT idProducto, nombre, precio, fotoProducto FROM productos";
 
-            while($fila = mysqli_fetch_array($resultado)){
-                //guardo cada fila de la "consulta SQL"
-
-                echo "<td><img src='img/imgProductos/$fila[fotoProducto]' WIDTH=90 HEIGHT=70/></td>";
-                    echo "<a>$fila[nombre]</a>";
-                    echo "<a>$$fila[precio]</a>";
-
+                if ($resultado = mysqli_query($con, $consulta)) {
+                    while ($fila = mysqli_fetch_array($resultado)) {
+                        echo "<div class='col-md-4'>";
+                        echo "<div class='card'>";
+                        echo "<form method='post' action='index.php?accion=meter&codigo=<?php echo $fila[idProducto]; ?>'>";
+                        echo "<div class='card-body text-center'>";
+                        echo "<div class='card-img-actions'>";
+                        echo "<img src='img/imgProductos/$fila[fotoProducto]' class='card-img img-fluid' width='96' height='350'/>";
+                        echo "</div>";
+                        echo "</div>";
+                        echo "<div class='card-body bg-light text-center'>";
+                        echo "<div class='mb-2'>";
+                        echo "<h6 class='font-weight-semibold mb-2'>";
+                        echo "<a href='#' class='text-default mb-2' data-abc='true'>$fila[nombre]</a>";
+                        echo "</h6>";
+                        echo "</div>";
+                        echo "<h3 class='mb-0 font-weight-semibold'>$$fila[precio]</h3>";
+                        echo "<div class='cart-action'><input type='text' class='cantidad-producto' name='cantidad' value='1' size='2' /><input type='submit' value='Agregar al Carrito' class='botonAgregarAccion'/></div>";
+                        echo "</div>";
+                        echo "</form>";
+                        echo "</div>";
+                        echo "</div>";
+                    }
+                }
+            } else {
+                echo "<h1>No hay conexion</h1>";
             }
-        }
-    }else{
-        echo "<h1>No hay conexion</h1>";
-    }
 
-    ?>
+            ?>
 </section>
 
 
