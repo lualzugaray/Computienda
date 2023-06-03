@@ -35,7 +35,7 @@ include_once "header.php";
     </div>
 </section>
 
-<section id="productos">
+<section id="productos" style="margin-bottom: 150px;">
     <div class="container">
         <h2><span>CATÁLOGO DE PRODUCTOS</span></h2>
     </div>
@@ -81,7 +81,8 @@ include_once "header.php";
 
 
 
-
-<?php
-include_once "footer.php";
-?>
+<section class="footer" style="position: fixed;left: 0;bottom: 0;width: 100%;background-color: #000000;text-align: center;">
+    <?php
+    include_once "footer.php";
+    ?>
+</section>
