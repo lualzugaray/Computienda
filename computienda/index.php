@@ -6,7 +6,7 @@ include_once "header.php";
     <div class="inicio">
         <h1>Descubre <br>la inspiración <br>para construir una PC</h1>
         <div class="d-flex align-items-start flex-column" style="height: 200px;">
-            <button type="button" class="btn btn-danger">Ver más</button>
+            <button type="button" class="btn btn-danger"><a href="#productos" style="color:white">Ver más</a></button>
         </div>
     </div>
 </section>
