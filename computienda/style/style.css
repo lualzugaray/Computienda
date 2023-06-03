@@ -75,6 +75,7 @@ h1 {
     font-family: 'Nova Square', cursive;
 }
 
+
 .contenedor {
     display: flex;
     flex-direction: column;
@@ -192,13 +193,3 @@ h1 {
     width: 100%;
     height: auto;
 }
-
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: black;
-    color: white;
-    text-align: center;
-  }
