@@ -12,7 +12,7 @@ include_once "header.php";
 </section>
 
 <section id="presentacion">
-    <div class="container">
+    <div class="contenedor">
         <h2> <span>EQUIPO DE JUEGOS</span></h2>
         <p>Empresa líder en tarjetas madre, tarjetas gráficas, laptops,hardware de juegos <br> y sistemas de alto rendimiento.
             ¡Nos apasiona unirnos a los jugadores para <br> desafiar los límites sin miedo y luchar mientras nos elevamos a la gloria <br> máxima!</p>

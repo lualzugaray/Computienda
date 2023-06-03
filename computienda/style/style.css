@@ -75,7 +75,7 @@ h1 {
     font-family: 'Nova Square', cursive;
 }
 
-.container {
+.contenedor {
     display: flex;
     flex-direction: column;
     align-items: center;
