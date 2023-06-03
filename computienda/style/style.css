@@ -163,7 +163,7 @@ h1 {
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, .125);
     border-radius: .1875rem;
-    width: 300px;
+    width: 90%;
 }
 
 #productos .card-img-actions {
