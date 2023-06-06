@@ -1,5 +1,5 @@
 <?php
-include_once "maquetado/header.php";
+include_once "header.php";
 ?>
 
 
@@ -57,5 +57,5 @@ include_once "maquetado/header.php";
 </div>
 
 <?php
-    include_once "maquetado/footer.php";
+    include_once "footer.php";
     ?>

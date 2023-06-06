@@ -10,10 +10,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav nav-fill w-100">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="paginas/miCuenta.php">Mi cuenta <i class="fa fa-user"></i></a>
+                            <a class="nav-link active" aria-current="page" href="miCuenta.php">Mi cuenta <i class="fa fa-user"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="paginas/miCarro.php">Mi carro <i class="fa fa-shopping-cart"></i></a>
+                            <a class="nav-link" href="miCarro.php">Mi carro <i class="fa fa-shopping-cart"></i></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Cerrar sesión <i class="fa fa-sign-out"></i></a>
