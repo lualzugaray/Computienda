@@ -138,7 +138,7 @@ h1 {
 }
 
 #presentacion h2,
-#productos h2 {
+#productos h2, #carrito h2 {
     text-align: center;
     font-family: 'Squada One', cursive;
 }
@@ -146,50 +146,50 @@ h1 {
 
 /* PRODUCTOS */
 
-#productos .mt-50 {
-    margin-top: 50px;
-}
-
-#productos .mb-50 {
-    margin-bottom: 50px;
-}
-
 #productos .card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, .125);
-    border-radius: .1875rem;
-    width: 90%;
+    height: 370px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
 }
 
-#productos .card-img-actions {
-    position: relative;
-}
-
-#productos .card-body {
-    flex: 1 1 auto;
-    text-align: center;
-
-}
-
-#productos .card-body h6 {
-    font-size: 14px;
-}
-
-#productos .card-body h3 {
-    font-size: 18px;
-}
-
-#productos .cart-action {
-    margin-top: 10px; 
+#productos .card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #productos .card-img {
     width: 100%;
-    height: auto;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+#productos .card-title {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#productos .card-price {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#productos .card-footer {
+    text-align: center; 
+}
+
+#productos .btn-primary {
+    background-color: #dc3545; 
+    color: #ffffff; 
+    border: none; 
+    padding: 10px 20px;
+    margin-top: 10px; 
+}
+
+#productos .btn-primary:hover {
+    background-color: #710710;
 }

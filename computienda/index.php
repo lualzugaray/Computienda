@@ -14,8 +14,7 @@ include_once "header.php";
 <section id="presentacion">
     <div class="contenedor">
         <h2> <span>EQUIPO DE JUEGOS</span></h2>
-        <p>Empresa líder en tarjetas madre, tarjetas gráficas, laptops,hardware de juegos <br> y sistemas de alto rendimiento.
-            ¡Nos apasiona unirnos a los jugadores para <br> desafiar los límites sin miedo y luchar mientras nos elevamos a la gloria <br> máxima!</p>
+        <p>Empresa líder en tarjetas madre, tarjetas gráficas, laptops, hardware de juegos <br> y sistemas de alto rendimiento. ¡Nos apasiona unirnos a los jugadores para <br> desafiar los límites sin miedo y luchar mientras nos elevamos a la gloria <br> máxima!</p>
         <div class="container">
             <div class="fila">
                 <div class="columna">
@@ -43,40 +42,41 @@ include_once "header.php";
     <div class="container d-flex justify-content-center mt-50 mb-50">
         <div class="row justify-content-center">
             <?php
-            if (mysqli_connect('localhost', 'root', '', 'productos')) {
-                $con = mysqli_connect('localhost', 'root', '', 'productos');
-
-                $consulta = "SELECT idProducto, nombre, precio, fotoProducto FROM productos";
-
-                if ($resultado = mysqli_query($con, $consulta)) {
-                    while ($fila = mysqli_fetch_array($resultado)) {
-                        echo "<div class='col-md-4 mt-2'>";
-                        echo "<div class='card'>";
-                        echo "<form method='post' action='index.php?accion=meter&codigo=<?php echo $fila[idProducto]; ?>'>";
-                        echo "<div class='card-body text-center'>";
-                        echo "<div class='card-img-actions'>";
-                        echo "<img src='img/imgProductos/$fila[fotoProducto]' class='card-img img-fluid' width='96' height='350'/>";
-                        echo "</div>";
-                        echo "</div>";
-                        echo "<div class='card-body bg-light text-center'>";
-                        echo "<div class='mb-2'>";
-                        echo "<h6 class='font-weight-semibold mb-2'>";
-                        echo "<a href='#' class='text-default mb-2' data-abc='true'>$fila[nombre]</a>";
-                        echo "</h6>";
-                        echo "</div>";
-                        echo "<h3 class='mb-0 font-weight-semibold'>$$fila[precio]</h3>";
-                        echo "<div class='cart-action'><input type='text' class='cantidad-producto' name='cantidad' value='1' size='2' /><input type='submit' value='Agregar al Carrito' class='botonAgregarAccion'/></div>";
-                        echo "</div>";
-                        echo "</form>";
-                        echo "</div>";
-                        echo "</div>";
-                    }
-                }
-            } else {
-                echo "<h1>No hay conexion</h1>";
+            $con = mysqli_connect('localhost', 'root', '', 'productos');
+            if (!$con) {
+                die("Error al conectar a la base de datos");
             }
 
+            $consulta = mysqli_query($con, "SELECT * FROM productos");
+
+            if (mysqli_num_rows($consulta) > 0) {
+                while ($row = mysqli_fetch_array($consulta)) {
+                    echo "<div class='col-lg-4 col-md-6 mb-4'>
+                            <div class='card h-70'>
+                                <div class='card-body bg-light text-center'>
+                                    <div class='card-img-actions'>
+                                        <img class='card-img img-fluid' src='img/imgProductos/{$row['fotoProducto']}' alt='{$row['nombre']}' style='width:150px; height:150px; object-fit:cover;'>
+                                    </div>
+                                    <h6 class='card-title font-weight-semibold mb-2'>{$row['nombre']}</h6>
+                                    <h5>\${$row['precio']}</h5>
+                                </div>
+                                <div class='card-footer'>
+                                    <form action='miCarro.php?accion=agregar' method='post'>
+                                        <input type='hidden' name='codigoProducto' value='{$row['idProducto']}'/>
+                                        <button type='submit' name='accion' value='agregar' class='btn btn-primary'>Agregar al Carrito</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>";
+                }
+            } else {
+                echo "No se encontraron productos";
+            }
+
+            mysqli_close($con);
             ?>
+        </div>
+    </div>
 </section>
 
 
