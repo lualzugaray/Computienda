@@ -58,14 +58,22 @@ if (isset($_GET['accion'])) {
             }
             break;
 
-            case 'comprar':
+        case 'comprar':
+            if ($_SESSION['carrito'] != NULL) {
                 $_SESSION['carrito'] = array();
                 $mensaje = "Productos comprados";
-                break;
+            } else {
+                $mensaje = "No hay productos en el carrito";
+            }
+            break;
 
         case 'vaciar':
-            $_SESSION['carrito'] = array();
-            $mensaje = "Carrito vaciado";
+            if ($_SESSION['carrito'] != NULL) {
+                $_SESSION['carrito'] = array();
+                $mensaje = "Carrito vaciado";
+            } else {
+                $mensaje = "No hay productos en el carrito";
+            }
             break;
     }
 }
