@@ -58,6 +58,11 @@ if (isset($_GET['accion'])) {
             }
             break;
 
+            case 'comprar':
+                $_SESSION['carrito'] = array();
+                $mensaje = "Productos comprados";
+                break;
+
         case 'vaciar':
             $_SESSION['carrito'] = array();
             $mensaje = "Carrito vaciado";
@@ -104,6 +109,7 @@ if (isset($_GET['accion'])) {
         </div>
         <div class="d-flex justify-content-end mt-4">
             <a href="miCarro.php?accion=vaciar" class="btn btn-danger">Vaciar Carrito</a>
+            <a href="miCarro.php?accion=comprar" class="btn btn-danger">Comprar</a>
         </div>
     </div>
     <div class="container mt-4">
