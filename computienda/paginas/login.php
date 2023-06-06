@@ -14,19 +14,19 @@ include_once "maquetado/header.php";
             <form action="controlador/loginLogica.php" method="POST">
                 <div class="form-row">
                     <div class="input-group mb-3 col-12">
-                        <h1>Ingresar</h1>
+                        <h1>Bienvenido</h1>
                         </div>
                         </div>
                     <div class="form-row">
                         <div class="input-group mb-3 col-6">
-                        <input type="email" name="email" class="form-control input_user" placeholder="Su mail">
+                        <input type="text" name="nombre" class="form-control input_user" placeholder="Ingresa tu nombre de usuario">
                         </div>
                         <div class="input-group mb-3 col-6">
-                        <input type="password" name="contrasena" class="form-control input_pass" placeholder="Su contraseña">
+                        <input type="password" name="contrasena" class="form-control input_pass" placeholder="Ingresa tu contraseña">
                         </div>
                     </div>
                     <div class="d-flex justify-content-center mt-3 login_container">
-                    <button type="submit">Ingresar</button>
+                    <button type="submit">Iniciar sesion</button>
                     </div>
                 </form>
             </div>  
