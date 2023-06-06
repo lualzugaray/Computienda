@@ -1,4 +1,4 @@
-<?php include_once "maquetado/header.php"; ?>
+<?php include_once "header.php"; ?>
 
 <?php
 session_start();
@@ -127,6 +127,6 @@ if (isset($_GET['accion'])) {
 
 <section class="footer" style="position: fixed;left: 0;bottom: 0;width: 100%;background-color: #000000;text-align: center;">
     <?php
-    include_once "maquetado/footer.php";
+    include_once "footer.php";
     ?>
 </section>

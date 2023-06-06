@@ -1,5 +1,5 @@
 <?php
-include_once "maquetado/header.php";
+include_once "header.php";
 ?>
 
 

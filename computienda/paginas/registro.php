@@ -14,6 +14,7 @@ include_once "maquetado/header.php";
 
                         <div class="form-row">
                             <div class="input-group mb-3 col-12">
+                            <img src="img/user-login.png" alt="imagen usuario" width="128" height="128">
                                 <h1>Registrarse</h1>
                             </div>
                         </div>
@@ -56,5 +57,5 @@ include_once "maquetado/header.php";
 </div>
 
 <?php
-    include_once "footer.php";
+    include_once "maquetado/footer.php";
     ?>

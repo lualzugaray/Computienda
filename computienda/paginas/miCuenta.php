@@ -1,5 +1,5 @@
 <?php
-include_once "maquetado/header.php";
+include_once "header.php";
 ?>
 
 <section id="miCuenta">
@@ -9,5 +9,5 @@ include_once "maquetado/header.php";
 </section>
 
 <?php
-include_once "maquetado/footer.php";
+include_once "footer.php";
 ?>
