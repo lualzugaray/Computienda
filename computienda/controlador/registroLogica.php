@@ -1,5 +1,6 @@
 <?php
-//Primero, vemos que se haya ingresado algo en primer lugar. Si no se ingresó nada, lo enviaremos de vuelta al home o al formulario de registro.
+//Primero, vemos que se haya ingresado algo en primer lugar. 
+//Si no se ingresó nada, lo enviaremos de vuelta al home o al formulario de registro.
 if(empty($_POST["email"]) || empty($_POST["contrasena"])):
     header("Location:../index.php");
     die();
@@ -9,9 +10,9 @@ endif;
 //Para eso usamos $_POST[ ] con el "name" que le dimos a ese campo
 //Por ejemplo, si era name=nombre, haremos $_POST["nombre]
 $nombre = $_POST["nombre"];
-$apellido = $_POST["apellido"];
 $email = $_POST["email"];
 $contrasena = $_POST["contrasena"];
+$contrasenaConfirmacion = $_POST["contrasenaConfirmacion"];
 
 
 //explode separará todo lo que hay antes y despues del @. Necesitamos la dirección y ve que tenga un @ para ver que es un mail "real"
@@ -38,6 +39,14 @@ if(file_exists("usuarios/$email/usuario.txt") && file_get_contents("usuarios/$em
     die();
 endif;
 
+
+// Se verifica si las contraseñas coinciden
+
+if(!$contrasena === $contrasenaConfirmacion):
+    header("Location:../index.php");
+    die();
+endif;
+
 //Pero, si nada de esto existe, significa que esta todo bien, y podemos avanzar!
 //mkdir() crea una carpeta en la ruta especificada y con el nombre especificado
 //en este caso, en la carpeta "usuarios" y con el mail que pusimos como nombre.
@@ -50,7 +59,6 @@ mkdir("usuarios/$email");
 
 file_put_contents("usuarios/$email/usuario.txt",$usuario);
 file_put_contents("usuarios/$email/nombre.txt",$nombre);
-file_put_contents("usuarios/$email/apellido.txt",$apellido);
 file_put_contents("usuarios/$email/perfil.txt","usuario");
 
 //En la contraseña, tomamos una precaución extra, y agregamos "password_hash($contrasena,PASSWORD_DEFAULT)
