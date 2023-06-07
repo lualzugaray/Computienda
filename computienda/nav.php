@@ -13,6 +13,9 @@
                             <a class="nav-link active" aria-current="page" href="miCuenta.php">Mi cuenta <i class="fa fa-user"></i></a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="login.php">Iniciar sesion <i class="fa fa-user"></i></a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="miCarro.php">Mi carro <i class="fa fa-shopping-cart"></i></a>
                         </li>
                         <li class="nav-item">
