@@ -34,10 +34,10 @@
                             <a class="nav-link active" aria-current="page" href="#">Promociones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Laptops</a>
+                            <a class="nav-link" href="index.php">Laptops</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">PC de escritorio</a>
+                            <a class="nav-link" href="index.php">PC de escritorio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Monitores</a>
