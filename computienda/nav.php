@@ -19,7 +19,7 @@
                             <a class="nav-link" href="miCarro.php">Mi carro <i class="fa fa-shopping-cart"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Cerrar sesión <i class="fa fa-sign-out"></i></a>
+                            <a class="nav-link" href="controlador/logoutLogica.php">Cerrar sesión <i class="fa fa-sign-out"></i></a>
                         </li>
                     </ul>
                 </div>
