@@ -1,7 +1,8 @@
-<?php include_once "header.php"; ?>
+<?php session_start();
+ include_once "header.php"; ?>
 
 <?php
-session_start();
+
 if (!isset($_SESSION['carrito'])) {
     $_SESSION['carrito'] = array();
 }
