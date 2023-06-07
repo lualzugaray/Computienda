@@ -20,8 +20,8 @@ if (mysqli_connect('localhost', 'root', '', 'productos')) {
         echo "
                 <tr>
                     <th>Nombre</th>
-                    <th>Precio</th>
                     <th>Foto Producto</th>
+                    <th>Precio</th>
                     <th>Borrar</th>
                 </tr>            
             ";
