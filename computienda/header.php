@@ -27,6 +27,6 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     </header>
 
-    <a href="https://wa.me/610488485078" class="btn-wsp" target="_blank">
-	    <i class="fa fa-whatsapp icono"></i>
-	</a>
+    <a href="https://wa.me/610488485078" class="btn-wsp" target="_blank" style="text-decoration: none;">
+    <i class="fa fa-whatsapp icono"></i>
+</a>
