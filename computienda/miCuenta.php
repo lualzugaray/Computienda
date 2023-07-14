@@ -23,6 +23,9 @@ include_once "header.php";
                                         $nombreUsuario = $_SESSION["nombreUsuario"];
                                         echo "<input type='text' name='nombre' class='form-control input_user' 
                                         placeholder='$nombreUsuario'>";
+                                    } else{
+                                        echo "<input type='text' name='nombre' class='form-control input_user' 
+                                        placeholder='Nombre de usuario'>";
                                     }
                                     ?>
                                 </div>
@@ -35,7 +38,11 @@ include_once "header.php";
                                         $email = $_SESSION["email"];
                                         echo "<input type='email' name='email' class='form-control input_user' 
                                         placeholder='$email'>";
+                                    }else{
+                                        echo "<input type='text' name='nombre' class='form-control input_user' 
+                                        placeholder='Correo electronico'>";
                                     }
+
                                     ?>
                                 </div>
                             </div>
