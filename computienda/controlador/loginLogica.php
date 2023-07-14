@@ -13,8 +13,7 @@ $nombreUsuario= $_POST["nombre"];
 $contrasena = $_POST["contrasena"];
 
 
-// Consulta SQL para verificar si el usuario existe y la contraseña coincide
-$loginCliente = "SELECT * FROM `cliente` WHERE nombreusuario = '$nombre';";
+
 // Conectamos a la base de datos
 $conexion = mysqli_connect('localhost', 'root', '', 'computienda_web');
 
@@ -30,10 +29,10 @@ if ($resultado && mysqli_num_rows($resultado) > 0) {
     if (password_verify($contrasena, $hashContraseña)) {
         // Las contraseñas coinciden, el usuario está autenticado correctamente
         // Puedes redirigir al usuario a la página de inicio o realizar las acciones necesarias
-        echo "Inicio de sesión exitoso";
+        echo "Inicio de sesión exitoso " . mysqli_num_rows($resultado);
     } else {
         // Las contraseñas no coinciden, el inicio de sesión es inválido
-        echo "Nombre de usuario o contraseña incorrectos";
+        echo "Nombre de usuario o contraseña incorrectos " . mysqli_num_rows($resultado);
     }
 } else {
     // El usuario ingresado no existe en la base de datos
