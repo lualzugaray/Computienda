@@ -138,7 +138,8 @@ h1 {
 }
 
 #presentacion h2,
-#productos h2, #carrito h2 {
+#productos h2,
+#carrito h2 {
     text-align: center;
     font-family: 'Squada One', cursive;
 }
@@ -179,15 +180,15 @@ h1 {
 }
 
 #productos .card-footer {
-    text-align: center; 
+    text-align: center;
 }
 
 #productos .btn-primary {
-    background-color: #dc3545; 
-    color: #ffffff; 
-    border: none; 
+    background-color: #dc3545;
+    color: #ffffff;
+    border: none;
     padding: 10px 20px;
-    margin-top: 10px; 
+    margin-top: 10px;
 }
 
 #productos .btn-primary:hover {
@@ -198,32 +199,35 @@ h1 {
 /*Formulario registro*/
 
 
-#formulario{
+
+#formulario {
     position: relative;
     background-image: url("../img/pcBG.jpg");
-      background-size: cover;
-      margin: 0;
+    background-size: cover;
+    margin: 0;
+    display: block;
 }
 
 
 
-#registro, #login{
+#registro,
+#login {
     border: black;
     border-style: solid;
     border-width: 0.3rem;
 }
 
-#registro h2{
+#registro h2 {
     text-transform: uppercase;
     color: black;
 }
 
-#login h2{
+#login h2 {
     text-transform: uppercase;
     color: black;
 }
 
-#registro button{
+#registro button {
     text-transform: uppercase;
     font-size: 1.2rem;
     border: none;
@@ -233,7 +237,7 @@ h1 {
 }
 
 
-#login button{
+#login button {
     text-transform: uppercase;
     font-size: 1.2rem;
     border: none;
@@ -245,26 +249,26 @@ h1 {
 
 .white-text {
     color: white;
- }
+}
 
 
- /*Formulario login*/
+/*Formulario login*/
 
- .bold-link {
+.bold-link {
     font-weight: bold;
-  }
-
-  
+}
 
 
-  /*PAGINA MI CUENTA*/
 
-#miCuenta h2{
+
+/*PAGINA MI CUENTA*/
+
+#miCuenta h2 {
     font-size: 2.6rem;
 }
 
 
-#miCuenta button{
+#miCuenta button {
     text-transform: uppercase;
     font-size: 1.2rem;
     border: none;
@@ -294,7 +298,7 @@ h1 {
     align-items: center;
 }
 
-.btn-wsp:hover{
+.btn-wsp:hover {
     color: #25d366;
     background: #FFF;
 }
@@ -302,13 +306,15 @@ h1 {
 .fa-whatsapp {
     border-bottom: none;
 }
-a i{
+
+a i {
     border-bottom: none;
 }
-@media only screen and (min-width:320px) and (max-width:768px){
-    .btn-wsp{
-        width:63px;
-        height:63px;
-     line-height: 66px;
-	}
+
+@media only screen and (min-width:320px) and (max-width:768px) {
+    .btn-wsp {
+        width: 63px;
+        height: 63px;
+        line-height: 66px;
+    }
 }

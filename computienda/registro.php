@@ -4,9 +4,9 @@ include_once "header.php";
 
 
     <!--Formulario de registro-->
-<div id="formulario" class="row justify-content-center">
+<div id="formulario" style="height: -webkit-fill-available;" class="row justify-content-center">
    <div class="col-12 col-md-6"> <!-- Ajusta los valores de las clases según tus necesidades -->
-      <div class="box">
+      <div class="box" style="background-color: cadetblue">
 
          <form id="registro" class="container border border-4 border-dark my-4" action="controlador/registroLogica.php" method="POST">
 
@@ -63,7 +63,8 @@ include_once "header.php";
    </div>
 </div>
 
-
-<?php
+<section class="footer" style="position: fixed;left: 0;bottom: 0;width: 100%;background-color: #000000;text-align: center;">
+    <?php
     include_once "footer.php";
     ?>
+</section>
