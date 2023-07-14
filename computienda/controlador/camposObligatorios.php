@@ -1,4 +1,5 @@
 <?php
+ session_start();
 include_once "../header.php";
 ?>
 
@@ -19,9 +20,9 @@ include_once "../header.php";
 </div>
 
 
-       
-<?php
+<section class="footer" style="position: fixed;left: 0;bottom: 0;width: 100%;background-color: #000000;text-align: center;">
+    <?php
     include_once "../footer.php";
     ?>
+</section>
 
-</html>

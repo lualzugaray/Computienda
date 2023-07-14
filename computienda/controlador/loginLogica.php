@@ -18,18 +18,21 @@ $contrasena = $_POST["contrasena"];
 $conexion = mysqli_connect('localhost', 'root', '', 'computienda_web');
 
 // Consultar en la base de datos el hash de la contraseña para el usuario ingresado
-$query = "SELECT contrasena FROM cliente WHERE nombreusuario = '$nombreUsuario'";
+$query = "SELECT contrasena, email FROM cliente WHERE nombreusuario = '$nombreUsuario'";
 $resultado = mysqli_query($conexion, $query);
 
 if ($resultado && mysqli_num_rows($resultado) > 0) {
     $fila = mysqli_fetch_assoc($resultado);
     $hashContraseña = $fila['contrasena'];
-
+    $email = $fila['email'];
     // Verificar si la contraseña ingresada coincide con el hash almacenado en la base de datos
     if (password_verify($contrasena, $hashContraseña)) {
         // Las contraseñas coinciden, el usuario está autenticado correctamente
         // Puedes redirigir al usuario a la página de inicio o realizar las acciones necesarias
-        echo "Inicio de sesión exitoso " . mysqli_num_rows($resultado);
+        $_SESSION["nombreUsuario"] = $nombreUsuario;
+        $_SESSION["email"] = $email;
+        header("Location:../index.php");
+        die();
     } else {
         // Las contraseñas no coinciden, el inicio de sesión es inválido
         echo "Nombre de usuario o contraseña incorrectos " . mysqli_num_rows($resultado);

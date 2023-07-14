@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once "header.php";
 ?>
 
@@ -17,22 +18,31 @@ include_once "header.php";
 
                             <div class="form-row">
                                 <div class="input-group mb-3 col-12">
-                                    <input type="text" name="nombre" class="form-control input_user" 
-                                    placeholder="NombreUsuario">
+                                    <?php 
+                                    if (isset($_SESSION["nombreUsuario"])) {
+                                        $nombreUsuario = $_SESSION["nombreUsuario"];
+                                        echo "<input type='text' name='nombre' class='form-control input_user' 
+                                        placeholder='$nombreUsuario'>";
+                                    }
+                                    ?>
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="input-group mb-3 col-12">
-                                    <input type="email" name="email" class="form-control input_user" 
-                                    placeholder="nombre.usuario@gmail.com">
+                                    <?php 
+                                    if (isset($_SESSION["email"])) {
+                                        $email = $_SESSION["email"];
+                                        echo "<input type='email' name='email' class='form-control input_user' 
+                                        placeholder='$email'>";
+                                    }
+                                    ?>
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="input-group mb-3 col-12">
-                                    <input type="password" name="contrasena" class="form-control input_pass" 
-                                    placeholder="Ingresa una contraseña">
+                                    <input type="password" name="contrasena" class="form-control input_pass" placeholder="Ingresa contraseña">
                                 </div>
                             </div>
 
@@ -45,57 +55,54 @@ include_once "header.php";
             </div>
         </div>
 
-
-
         <div class="col-6">
             <div>
                 <h2>Mis compras</h2>
 
-
                 <?php
-// Configuración de la conexión a la base de datos
-$host = 'localhost';
-$usuario = 'root';
-$contrasena = '';
-$base_de_datos = 'productos';
+                // Configuración de la conexión a la base de datos
+                $host = 'localhost';
+                $usuario = 'root';
+                $contrasena = '';
+                $base_de_datos = 'productos';
 
-// Crear la conexión
-$conexion = new mysqli($host, $usuario, $contrasena, $base_de_datos);
+                // Crear la conexión
+                $conexion = new mysqli($host, $usuario, $contrasena, $base_de_datos);
 
-// Verificar si hay errores de conexión
-if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
-}
+                // Verificar si hay errores de conexión
+                if ($conexion->connect_error) {
+                    die("Error de conexión: " . $conexion->connect_error);
+                }
 
-// Consulta SQL
-$sql = "SELECT fecha, producto, precio, descripcion_producto FROM compra";
+                // Consulta SQL
+                $sql = "SELECT fecha, producto, precio, descripcion_producto FROM compra";
 
-// Ejecutar la consulta
-$resultado = $conexion->query($sql);
+                // Ejecutar la consulta
+                $resultado = $conexion->query($sql);
 
-// Comprobar si se obtuvieron resultados
-if ($resultado->num_rows > 0) {
-    // Mostrar los resultados en una tabla
-    echo "<table class='table'>";
-    echo "<tr><th>Fecha</th><th>Producto</th><th>Precio</th><th>Descripción</th></tr>";
+                // Comprobar si se obtuvieron resultados
+                if ($resultado->num_rows > 0) {
+                    // Mostrar los resultados en una tabla
+                    echo "<table class='table'>";
+                    echo "<tr><th>Fecha</th><th>Producto</th><th>Precio</th><th>Descripción</th></tr>";
 
-    while ($fila = $resultado->fetch_assoc()) {
-        echo "<tr>";
-        echo "<td>" . $fila['fecha'] . "</td>";
-        echo "<td>" . $fila['producto'] . "</td>";
-        echo "<td>" . $fila['precio'] . "</td>";
-        echo "<td>" . $fila['descripcion_producto'] . "</td>";
-        echo "</tr>";
-    }
+                    while ($fila = $resultado->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . $fila['fecha'] . "</td>";
+                        echo "<td>" . $fila['producto'] . "</td>";
+                        echo "<td>" . $fila['precio'] . "</td>";
+                        echo "<td>" . $fila['descripcion_producto'] . "</td>";
+                        echo "</tr>";
+                    }
 
-    echo "</table>";
-} else {
-    echo "No se encontraron resultados.";
-}
+                    echo "</table>";
+                } else {
+                    echo "No se encontraron resultados.";
+                }
 
-// Cerrar la conexión
-$conexion->close();
-?>
+                // Cerrar la conexión
+                $conexion->close();
+                ?>
 
             </div>
         </div>
@@ -105,6 +112,8 @@ $conexion->close();
 
 </section>
 
-<?php
-include_once "footer.php";
-?>
+<section class="footer" style="position: fixed;left: 0;bottom: 0;width: 100%;background-color: #000000;text-align: center;">
+    <?php
+    include_once "footer.php";
+    ?>
+</section>
