@@ -9,40 +9,37 @@ if (empty($_POST["nombre"]) || empty($_POST["contrasena"])) {
 }
 
 // Obtenemos los valores de los campos "nombre" y "contrasena"
-$nombre = $_POST["nombre"];
+$nombreUsuario= $_POST["nombre"];
 $contrasena = $_POST["contrasena"];
 
 
 // Consulta SQL para verificar si el usuario existe y la contraseña coincide
 $loginCliente = "SELECT * FROM `cliente` WHERE nombreusuario = '$nombre';";
 // Conectamos a la base de datos
-$con = mysqli_connect('localhost', 'root', '', 'computienda_web');
+$conexion = mysqli_connect('localhost', 'root', '', 'computienda_web');
 
-if (!$con) {
-    die("Error al conectar a la base de datos");
-}
+// Consultar en la base de datos el hash de la contraseña para el usuario ingresado
+$query = "SELECT contrasena FROM cliente WHERE nombreusuario = '$nombreUsuario'";
+$resultado = mysqli_query($conexion, $query);
 
-// Ejecutamos la consulta para obtener el hash de la contraseña
-$resultado = mysqli_query($con, $loginCliente);
-
-// Verificamos si se obtuvo un resultado
-if (mysqli_num_rows($resultado) > 0) {
+if ($resultado && mysqli_num_rows($resultado) > 0) {
     $fila = mysqli_fetch_assoc($resultado);
-    $hash = $fila['contrasena']; // Obtener el valor hash de la contraseña desde la consulta
-    
+    $hashContraseña = $fila['contrasena'];
 
-
-    // Verificamos que la contraseña coincida
-    if (password_verify($contrasena, $hash)) {
-        // Redireccionamos a la página correspondiente 
-        header("Location: ../index.php");
-        die();
+    // Verificar si la contraseña ingresada coincide con el hash almacenado en la base de datos
+    if (password_verify($contrasena, $hashContraseña)) {
+        // Las contraseñas coinciden, el usuario está autenticado correctamente
+        // Puedes redirigir al usuario a la página de inicio o realizar las acciones necesarias
+        echo "Inicio de sesión exitoso";
+    } else {
+        // Las contraseñas no coinciden, el inicio de sesión es inválido
+        echo "Nombre de usuario o contraseña incorrectos";
     }
+} else {
+    // El usuario ingresado no existe en la base de datos
+    echo "Nombre de usuario o contraseña incorrectos";
 }
 
-
-
-// El usuario o la contraseña no son válidos
-header("Location: ../controlador/usuarioNoExiste.php");
-die();
+// Cerrar la conexión a la base de datos
+mysqli_close($conexion);
 ?>
