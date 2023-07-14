@@ -12,6 +12,7 @@ if (empty($_POST["email"]) || empty($_POST["contrasena"])) {
 $nombre = $_POST["nombre"];
 $email = $_POST["email"];
 $contrasena = $_POST["contrasena"];
+$contrasena_hasheada = password_hash($contrasena, PASSWORD_DEFAULT);
 $contrasenaConfirmacion = $_POST["contrasenaConfirmacion"];
 
 // Explode separará todo lo que hay antes y después del @. Necesitamos la dirección y verificar que tenga un @ para ver que es un correo "real".
@@ -49,6 +50,13 @@ if (strcmp($contrasena, $contrasenaConfirmacion) !== 0) {
     die();
 }
 
+// Verificar si las contraseñas coinciden
+if (!password_verify($contrasenaConfirmacion, $contrasena_hasheada)) {
+    header("Location:../index.php");
+    die();
+}
+
+
 // Creamos la carpeta del usuario en la ruta especificada con el nombre del correo electrónico.
 mkdir("usuarios/$email");
 
@@ -61,8 +69,21 @@ file_put_contents("usuarios/$email/nombre.txt", $nombre);
 // Esto se hace por SEGURIDAD.
 file_put_contents("usuarios/$email/contrasena.txt", password_hash($contrasena, PASSWORD_DEFAULT));
 
+
+// Agrego el usuario del cliente a la BD
+
+$insertCliente = "INSERT INTO cliente (nombreusuario, email, contrasena) VALUES ('$nombre', '$email', '$contrasena_hasheada')";
+
+
+if(mysqli_connect('localhost','root','','computienda_web')){
+	
+	$con = mysqli_connect('localhost','root','','computienda_web');
+
+    mysqli_query($con,$insertCliente);
+		
+	}
 // Redireccionar al inicio de sesión o mostrar un mensaje de éxito
-header("Location:../inicioSesion.php");
+header("Location:../index.php");
 die();
 
 ?>

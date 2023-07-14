@@ -1,42 +1,48 @@
 <?php
-// iniciamos el inicio de sesión!
+// Iniciamos la sesión
 session_start();
 
-// Obviamente, vamos a chequear que los campos no estén vacíos
+// Verificamos que los campos no estén vacíos
 if (empty($_POST["nombre"]) || empty($_POST["contrasena"])) {
-    header("<Location: ../controlador/camposObligatorios.php");
+    header("Location: ../controlador/camposObligatorios.php");
     die();
 }
 
-// con $_POST, recibimos los contenidos de los campos "email" y "contraseña"
+// Obtenemos los valores de los campos "nombre" y "contrasena"
 $nombre = $_POST["nombre"];
 $contrasena = $_POST["contrasena"];
 
-// chequeamos que estos usuarios existan
-if (!is_dir("usuarios/$nombre")) {
-    header("Location:../controlador/usuarioNoExiste.php");
-    die();
+
+// Consulta SQL para verificar si el usuario existe y la contraseña coincide
+$loginCliente = "SELECT * FROM `cliente` WHERE nombreusuario = '$nombre';";
+// Conectamos a la base de datos
+$con = mysqli_connect('localhost', 'root', '', 'computienda_web');
+
+if (!$con) {
+    die("Error al conectar a la base de datos");
 }
 
-// Vemos que la contraseña coincida
-$contraUsuario = file_get_contents("usuarios/$nombre/contrasena.txt");
+// Ejecutamos la consulta para obtener el hash de la contraseña
+$resultado = mysqli_query($con, $loginCliente);
 
-if (!password_verify($contrasena, $contraUsuario)) {
-    header("Location:../controlador/contrasenaMal.php");
-    die();
+// Verificamos si se obtuvo un resultado
+if (mysqli_num_rows($resultado) > 0) {
+    $fila = mysqli_fetch_assoc($resultado);
+    $hash = $fila['contrasena']; // Obtener el valor hash de la contraseña desde la consulta
+    
+
+
+    // Verificamos que la contraseña coincida
+    if (password_verify($contrasena, $hash)) {
+        // Redireccionamos a la página correspondiente 
+        header("Location: ../index.php");
+        die();
+    }
 }
 
-// Ahora sí, todo salió bien, iniciamos la sesión!
-$_SESSION["usuario"] = [
-    "nombre" => file_get_contents("usuarios/$nombre/nombreUsuario.txt"),
-];
 
-// finalmente, antes de terminar, chequeamos si el usuario es un admin.
-if ($_SESSION["usuario"]["perfil"] == "admin") {
-    header("Location:../index.php"); // Si deseamos que nuestro admin vaya a otro lado, acá marcamos donde.
-    die();
-} else {
-    header("Location:../index.php");
-    die();
-}
+
+// El usuario o la contraseña no son válidos
+header("Location: ../controlador/usuarioNoExiste.php");
+die();
 ?>

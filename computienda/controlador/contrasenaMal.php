@@ -11,7 +11,7 @@ include_once "../header.php";
                 </div>
             </div>
         <div class="col-6">
-        <a href="login.php" class="w3-bar-item w3-button w3-hover-blue">Volver</a>
+        <a href="../login.php" class="w3-bar-item w3-button w3-hover-blue">Volver</a>
         </div>
     </div>
     </div>

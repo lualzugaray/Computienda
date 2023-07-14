@@ -3,6 +3,12 @@ include_once "header.php";
 ?>
 
 <section id="cover">
+<?php //session_start();
+    if (isset($_SESSION["nombre"])) {
+        $nombreUsuario = $_SESSION["nombre"];
+        echo "<h2>Bienvenido $nombreUsuario!</h2>";
+    }?>
+
     <div class="inicio">
         <h1>Descubre <br>la inspiración <br>para construir una PC</h1>
         <div class="d-flex align-items-start flex-column" style="height: 200px;">
