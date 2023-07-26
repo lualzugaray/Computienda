@@ -7,9 +7,9 @@ include_once "header.php";
 
 <?php 
    
-    if (isset($_SESSION["nombreUsuario"])) {
-        $nombreUsuario = $_SESSION["nombreUsuario"];
-        echo "<h2>Bienvenido $nombreUsuario!</h2>";
+    if (isset($_SESSION["nombre"])) {
+        $nombre = $_SESSION["nombre"];
+        echo "<h2>Bienvenido $nombre!</h2>";
     }
     
     ?>

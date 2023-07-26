@@ -201,9 +201,6 @@ h1 {
 
 
 #formulario {
-    position: relative;
-    background-image: url("../img/pcBG.jpg");
-    background-size: cover;
     margin: 0;
     display: block;
 }

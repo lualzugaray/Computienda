@@ -5,9 +5,9 @@ include_once "header.php";
 
 
 <!--Formulario de Login-->
-<section id="formulario" id="formulario" style="height: -webkit-fill-available;">
+<section id="formulario"  style="height: -webkit-fill-available;">
     <div style="background-position: center" class="row justify-content-center">
-        <div class="col-12 col-md-4"> <!-- Ajusta los valores de las clases según tus necesidades -->
+        <div class="col-12 col-md-4"> 
             <div class="box" style="background-color: cadetblue">
 
                 <form id="login" class="container border border-4 border-dark my-4" action="controlador/loginLogica.php" method="POST">
@@ -22,7 +22,8 @@ include_once "header.php";
 
                         <div class="form-row">
                             <div class="input-group mb-3 col-6">
-                                <input type="text" name="nombre" class="form-control input_user" placeholder="Ingresa su nombre de usuario">
+                                <input type="text" name="email" class="form-control input_user" 
+                                placeholder="Ingresa su correo electronico">
                             </div>
                         </div>
 
@@ -30,7 +31,8 @@ include_once "header.php";
 
                         <div class="form-row">
                             <div class="input-group mb-3 col-6">
-                                <input type="password" name="contrasena" class="form-control input_pass" placeholder="Ingresa una contraseña">
+                                <input type="password" name="contrasena" class="form-control input_pass" 
+                                placeholder="Ingresa una contraseña">
                             </div>
                         </div>
 
