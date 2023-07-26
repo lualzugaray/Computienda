@@ -23,7 +23,7 @@ include_once "header.php";
                         <div class="form-row">
                             <div class="input-group mb-3 col-6">
                                 <input type="text" name="email" class="form-control input_user" 
-                                placeholder="Ingresa su correo electronico">
+                                placeholder="Ingrese su correo electronico">
                             </div>
                         </div>
 
@@ -32,7 +32,7 @@ include_once "header.php";
                         <div class="form-row">
                             <div class="input-group mb-3 col-6">
                                 <input type="password" name="contrasena" class="form-control input_pass" 
-                                placeholder="Ingresa una contraseña">
+                                placeholder="Ingrese su contraseña">
                             </div>
                         </div>
 
