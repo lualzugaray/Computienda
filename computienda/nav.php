@@ -13,9 +13,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav nav-fill w-100">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="http://localhost/Computienda/computienda/miCuenta.php">Mi cuenta <i class="fa fa-user"></i></a>
-                        </li>
+
+                        <?php
+                         if(isset($_SESSION["nombre"])){
+                            echo "<li class='nav-item'>
+                                <a class='nav-link active' 
+                                aria-current='page' href='http://localhost/Computienda/computienda/miCuenta.php'>
+                                Mi cuenta <i class='fa fa-user'></i></a>
+                            </li>";}
+                        ?>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="http://localhost/Computienda/computienda/login.php">Iniciar sesion <i class="fa fa-user"></i></a>
                         </li>
