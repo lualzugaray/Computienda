@@ -2,15 +2,15 @@
 
 <?php
 
-if (mysqli_connect('localhost', 'root', '', 'productos')) {
+if (mysqli_connect('localhost', 'root', '', 'computienda_web')) {
     //servidor, usuario servidor, contraseña, nombre de la base de datos		
 
     echo "<h2 style='margin: revert;'><span>PRODUCTOS<span></h2>";
 
-    $con = mysqli_connect('localhost', 'root', '', 'productos');
+    $con = mysqli_connect('localhost', 'root', '', 'computienda_web');
     //guardo la conexion en una variable
 
-    $consulta = "SELECT * FROM productos";
+    $consulta = "SELECT * FROM producto";
     //guardo la "consulta SQL" en otra variable
 
 
@@ -31,7 +31,7 @@ if (mysqli_connect('localhost', 'root', '', 'productos')) {
             echo "<td>$fila[nombre]</a></td>";
             echo "<td><img src='../img/imgProductos/$fila[fotoProducto]' WIDTH=90 HEIGHT=70/></td>";
             echo "<td>$fila[precio]</a></td>";
-            echo "<td><a href='bajaproducto.php?nombre=" . $fila["idProducto"] . "'>Borrar</a></td>";
+            echo "<td><a href='bajaproducto.php?nombre=" . $fila["id_producto"] . "'>Borrar</a></td>";
             echo "</tr>";
         }
         echo "</table>";

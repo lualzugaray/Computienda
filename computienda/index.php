@@ -54,12 +54,12 @@ include_once "header.php";
     <div class="container d-flex justify-content-center mt-50 mb-50">
         <div class="row justify-content-center">
             <?php
-            $con = mysqli_connect('localhost', 'root', '', 'productos');
+            $con = mysqli_connect('localhost', 'root', '', 'computienda_web');
             if (!$con) {
                 die("Error al conectar a la base de datos");
             }
 
-            $consulta = mysqli_query($con, "SELECT * FROM productos");
+            $consulta = mysqli_query($con, "SELECT * FROM producto");
 
             if (mysqli_num_rows($consulta) > 0) {
                 while ($row = mysqli_fetch_array($consulta)) {
@@ -74,7 +74,7 @@ include_once "header.php";
                                 </div>
                                 <div class='card-footer'>
                                     <form action='miCarro.php?accion=agregar' method='post'>
-                                        <input type='hidden' name='codigoProducto' value='{$row['idProducto']}'/>
+                                        <input type='hidden' name='codigoProducto' value='{$row['id_producto']}'/>
                                         <button type='submit' name='accion' value='agregar' class='btn btn-primary'>Agregar al Carrito</button>
                                     </form>
                                 </div>

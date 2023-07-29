@@ -1,9 +1,9 @@
 <?php include_once "../header.php"; ?>
 <?php
 
-if(mysqli_connect('localhost','root','','productos')){
+if(mysqli_connect('localhost','root','','computienda_web')){
 	
-	$con = mysqli_connect('localhost','root','','productos');
+	$con = mysqli_connect('localhost','root','','computienda_web');
 	//guardo la conexion en una variable
 	
 	if(isset($_POST["nombre"])){
@@ -13,7 +13,7 @@ if(mysqli_connect('localhost','root','','productos')){
 		move_uploaded_file($_FILES['foto']['tmp_name'],"../img/imgProductos/".$hora.'.jpg');
 		$foto= $hora.'.jpg';
 
-		$consulta = "INSERT INTO productos (nombre, precio, fotoProducto) VALUES ('$nombre', '$precio', '$foto')";
+		$consulta = "INSERT INTO producto (nombre, precio, fotoProducto) VALUES ('$nombre', '$precio', '$foto')";
 		//guardo la "consulta SQL" en otra variable
 		
 		if($resultado = mysqli_query($con, $consulta)){

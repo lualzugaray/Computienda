@@ -2,7 +2,7 @@
     <div class="contenedor-1 bg-aqua">
         <div class="container-fluid">
             <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-black">
-            <a class="navbar-brand" href="http://localhost/Computienda/computienda/" style="font-size: xx-large">
+            <a class="navbar-brand" href="index.php" style="font-size: xx-large">
     <img src="img/logo.png" alt=""> COMPUTIENDA
 </a>
 

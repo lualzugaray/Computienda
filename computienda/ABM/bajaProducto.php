@@ -1,15 +1,15 @@
 <?php include_once "../header.php"; ?>
 <?php
 
-if(mysqli_connect('localhost','root','','productos')){
+if(mysqli_connect('localhost','root','','computienda_web')){
 	
-	$con = mysqli_connect('localhost','root','','productos');
+	$con = mysqli_connect('localhost','root','','computienda_web');
 	//guardo la conexion en una variable
 	
 	if(isset($_GET["nombre"])){
 		$codigo = $_GET["nombre"];
 		
-		$consulta = "DELETE FROM productos WHERE idProducto='$codigo'";
+		$consulta = "DELETE FROM producto WHERE id_producto='$codigo'";
 		//guardo la "consulta SQL" en otra variable
 		
 		if($resultado = mysqli_query($con, $consulta)){

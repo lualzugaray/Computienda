@@ -13,13 +13,13 @@ if (isset($_GET['accion'])) {
     switch ($_GET['accion']) {
         case 'agregar':
             if (is_numeric($_POST['codigoProducto'])) {
-                $con = mysqli_connect('localhost', 'root', '', 'productos');
+                $con = mysqli_connect('localhost', 'root', '', 'computienda_web');
                 if (!$con) {
                     die("Error al conectar a la base de datos");
                 }
 
                 $codigoProducto = $_POST['codigoProducto'];
-                $consulta = mysqli_query($con, "SELECT * FROM productos WHERE idProducto = '$codigoProducto'");
+                $consulta = mysqli_query($con, "SELECT * FROM producto WHERE id_producto = '$codigoProducto'");
 
                 if (mysqli_num_rows($consulta) > 0) {
                     $producto = mysqli_fetch_array($consulta);
