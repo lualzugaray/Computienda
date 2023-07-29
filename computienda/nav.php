@@ -21,13 +21,32 @@
                                 aria-current='page' href='http://localhost/Computienda/computienda/miCuenta.php'>
                                 Mi cuenta <i class='fa fa-user'></i></a>
                             </li>";}
+                            ?>
+                        <?php
+                            
+                        if(isset($_SESSION["email"])){
+                            
+                                $email = $_SESSION["email"];
+                            echo "<li class='nav-item'>
+                                <a class='nav-link active' aria-current='page' 
+                                href='http://localhost/Computienda/computienda/login.php'>$email<i class='fa fa-user'></i></a>
+                            </li>";}
+                        else{
+                            echo "<li class='nav-item'>
+                                <a class='nav-link active' aria-current='page' 
+                                href='http://localhost/Computienda/computienda/login.php'>Iniciar sesion <i class='fa fa-user'></i></a>
+                            </li>";
+                        }
                         ?>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="http://localhost/Computienda/computienda/login.php">Iniciar sesion <i class="fa fa-user"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://localhost/Computienda/computienda/miCarro.php">Mi carro <i class="fa fa-shopping-cart"></i></a>
-                        </li>
+                            <?php
+                                if(isset($_SESSION["nombre"])){
+                                    echo"<li class='nav-item'>
+                                        <a class='nav-link' href='http://localhost/Computienda/computienda/miCarro.php'>Mi carro 
+                                        <i class='fa fa-sign-out'></i></a>
+                                        </li>";}
+                            ?>
+
+
                         <?php
                             if(isset($_SESSION["nombre"])){
                                 echo"<li class='nav-item'>
