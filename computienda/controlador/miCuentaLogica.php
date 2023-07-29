@@ -3,10 +3,8 @@
 session_start();
 
 
-
-
 // Verificar si hay un usuario logueado
-if (!isset($_SESSION["nombreUsuario"])) {
+if (!isset($_SESSION["email"])) {
     echo "No está logueado";
     die();
 }
@@ -19,7 +17,7 @@ if (empty($_POST["email"])) {
     die();
 }
 // Obtenemos los valores de los campos "nombre" y "contrasena"
-$nombreUsuario = $_POST["nombre"];
+
 $email = $_POST["email"];
 $contrasena = $_POST["contrasena"];
 
@@ -27,10 +25,10 @@ $contrasena = $_POST["contrasena"];
 $conexion = mysqli_connect('localhost', 'root', '', 'computienda_web');
 
 // Consultar en la base de datos el hash de la contraseña para el usuario ingresado
-$query = "SELECT * FROM cliente WHERE nombreusuario = '$nombreUsuario'";
+$query = "SELECT * FROM cliente WHERE email = '$email'";
 $resultado = mysqli_query($conexion, $query);
 $actualizacion = "UPDATE cliente 
-                SET nombreusuario= '$nombreUsuario',
+                SET email= '$email',
                     email= '$email' WHERE nombreusuario= '$nombreUsuario'";
 
 if (mysqli_connect('localhost', 'root', '', 'computienda_web')) {

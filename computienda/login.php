@@ -3,7 +3,6 @@ include_once "header.php";
 ?>
 
 
-
 <!--Formulario de Login-->
 <section id="formulario"  style="height: -webkit-fill-available;">
     <div style="background-position: center" class="row justify-content-center">

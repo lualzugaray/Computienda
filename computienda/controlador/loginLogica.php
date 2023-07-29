@@ -17,18 +17,24 @@ $contrasena = $_POST["contrasena"];
 $conexion = mysqli_connect('localhost', 'root', '', 'computienda_web');
 
 // Consultar en la base de datos el hash de la contraseña para el usuario ingresado
-$query = "SELECT contrasena, nombre FROM cliente WHERE email = '$email'";
+$query = "SELECT email,contrasena, nombre FROM cliente WHERE email = '$email'";
 $resultado = mysqli_query($conexion, $query);
 
 if ($resultado && mysqli_num_rows($resultado) > 0) {
+
     $fila = mysqli_fetch_assoc($resultado);
     $hashContraseña = $fila['contrasena'];
+    $id_cliente= $fila['id_cliente'];
     $nombre = $fila['nombre'];
+    $apellido = $fila['apellido'];
+    $email = $fila['email'];
     // Verificar si la contraseña ingresada coincide con el hash almacenado en la base de datos
     if (password_verify($contrasena, $hashContraseña)) {
         // Las contraseñas coinciden, el usuario está autenticado correctamente
-       // $_SESSION["nombreUsuario"] = $nombreUsuario;
+        $_SESSION['id_cliente'] = $id_cliente;
+        $_SESSION["email"] = $email;
         $_SESSION["nombre"] = $nombre;
+        $_SESSION["apellido"]=$apellido;
         header("Location:../index.php");
         die();
     } else {
