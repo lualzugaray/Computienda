@@ -22,9 +22,13 @@
                         <li class="nav-item">
                             <a class="nav-link" href="http://localhost/Computienda/computienda/miCarro.php">Mi carro <i class="fa fa-shopping-cart"></i></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="controlador/logoutLogica.php">Cerrar sesión <i class="fa fa-sign-out"></i></a>
-                        </li>
+                        <?php
+                            if(isset($_SESSION["nombre"])){
+                                echo"<li class='nav-item'>
+                                    <a class='nav-link' href='controlador/logoutLogica.php'>Cerrar sesión 
+                                    <i class='fa fa-sign-out'></i></a>
+                                    </li>";}
+                        ?>
                     </ul>
                 </div>
 
