@@ -4,16 +4,18 @@ include_once "header.php";
 ?>
 
 <section id="cover">
-
-<?php 
+    <div id='bienvenido' class='d-flex container p-2'>
+        <?php 
    
-    if (isset($_SESSION["nombre"])) {
-        $nombre = $_SESSION["nombre"];
-        echo "<h2>Bienvenido $nombre!</h2>";
-    }
+        if (isset($_SESSION["nombre"])) {
+            $nombre = $_SESSION["nombre"];
+            echo " 
+            <h2>Bienvenido $nombre!</h2>
+                ";
+        }
     
-    ?>
-
+        ?>
+    </div>
     <div class="inicio">
         <h1>Descubre <br>la inspiración <br>para construir una PC</h1>
         <div class="d-flex align-items-start flex-column" style="height: 200px;">

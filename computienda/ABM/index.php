@@ -30,7 +30,7 @@ if (mysqli_connect('localhost', 'root', '', 'computienda_web')) {
             //guardo cada fila de la "consulta SQL"
             echo "<tr>";
             echo "<td>$fila[nombre]</a></td>";
-            echo "<td><img src='../img/imgProductos/$fila[fotoProducto]' WIDTH=90 HEIGHT=70/></td>";
+            echo "<td><img src='../img/imgProductos/$fila[foto_producto]' WIDTH=90 HEIGHT=70/></td>";
             echo "<td>$fila[precio]</a></td>";
             echo "<td><a href='editarProducto.php?id_producto=" . $fila["id_producto"] . "'>Editar</a></td>";
             echo "<td><a href='bajaproducto.php?nombre=" . $fila["id_producto"] . "'>Borrar</a></td>";

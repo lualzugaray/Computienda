@@ -13,7 +13,7 @@ if(mysqli_connect('localhost','root','','computienda_web')){
 		move_uploaded_file($_FILES['foto']['tmp_name'],"../img/imgProductos/".$hora.'.jpg');
 		$foto= $hora.'.jpg';
 
-		$consulta = "INSERT INTO producto (nombre, precio, fotoProducto) VALUES ('$nombre', '$precio', '$foto')";
+		$consulta = "INSERT INTO producto (nombre, precio, foto_producto) VALUES ('$nombre', '$precio', '$foto')";
 		//guardo la "consulta SQL" en otra variable
 		
 		if($resultado = mysqli_query($con, $consulta)){

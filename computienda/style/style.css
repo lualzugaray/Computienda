@@ -65,6 +65,14 @@ h1 {
     font-family: 'Nova Square', cursive;
 }
 
+/*BIENVENIDO*/
+
+#bienvenido{
+    background-color: #25d366;
+}
+#bienvenido h2{
+    font-family: 'Nova Square', cursive;
+}
 
 /* NAV */
 

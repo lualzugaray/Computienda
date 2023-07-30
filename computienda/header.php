@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nova+Square&family=Squada+One&display=swap" rel="stylesheet">
 
-    <link rel="icon" type="image/x-icon" href="img/imagenIco.ico">
+    <link rel="icon" type="image/x-icon" href="http://localhost/Computienda/computienda/img/imagenIco.ico">
     
 
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
