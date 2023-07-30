@@ -67,7 +67,7 @@ include_once "header.php";
                             <div class='card h-70'>
                                 <div class='card-body bg-light text-center'>
                                     <div class='card-img-actions'>
-                                        <img class='card-img img-fluid' src='img/imgProductos/{$row['fotoProducto']}' alt='{$row['nombre']}' style='width:150px; height:150px; object-fit:cover;'>
+                                        <img class='card-img img-fluid' src='img/imgProductos/{$row['foto_producto']}' alt='{$row['nombre']}' style='width:150px; height:150px; object-fit:cover;'>
                                     </div>
                                     <h6 class='card-title font-weight-semibold mb-2'>{$row['nombre']}</h6>
                                     <h5>\${$row['precio']}</h5>
