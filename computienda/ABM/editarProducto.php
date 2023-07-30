@@ -17,16 +17,17 @@ if (mysqli_connect('localhost', 'root', '', 'computienda_web')) {
                 $foto = $hora . '.jpg';
 
                 // Obtener el nombre de la foto anterior para eliminarla del servidor
-                $consulta_foto = "SELECT fotoProducto FROM producto WHERE id_producto = '$id_producto'";
+                $consulta_foto = "SELECT foto_producto FROM producto WHERE id_producto = '$id_producto'";
                 $resultado_foto = mysqli_query($con, $consulta_foto);
                 $fila_foto = mysqli_fetch_array($resultado_foto);
 
                 if ($fila_foto) {
-                    $foto_anterior = $fila_foto["fotoProducto"];
+                    $foto_anterior = $fila_foto["foto_producto"];
                     unlink("../img/imgProductos/" . $foto_anterior);
                 }
 
-                $consulta = "UPDATE producto SET nombre = '$nombre', precio = '$precio', fotoProducto = '$foto' WHERE id_producto = '$id_producto'";
+                $consulta = "UPDATE producto SET nombre = '$nombre', precio = '$precio', foto_producto = '$foto' 
+                WHERE id_producto = '$id_producto'";
             } else {
                 $consulta = "UPDATE producto SET nombre = '$nombre', precio = '$precio' WHERE id_producto = '$id_producto'";
             }
@@ -61,7 +62,7 @@ if (mysqli_connect('localhost', 'root', '', 'computienda_web')) {
                         </div>
                         <div class="form-group">
                             <label for="archivo">Foto actual:</label><br>
-                            <img src="../img/imgProductos/<?php echo $fila["fotoProducto"]; ?>" width="90" height="70" />
+                            <img src="../img/imgProductos/<?php echo $fila["foto_producto"]; ?>" width="90" height="70" />
                         </div>
                         <div class="form-group">
                             <label for="archivo">Cambiar Foto Producto en formato JPEG:</label><br><br>
