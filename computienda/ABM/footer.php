@@ -4,15 +4,14 @@
         <a class="navbar-brand" href="../index.php" style="font-size: xx-large;color: white; margin-left:10%">© 2023 COMPUTIENDA</a>
         <img src="img/logo.png" alt="" style="height: 60px;">
         <ul class="list-unstyled d-flex dark bg-black" style="margin-right: 10%">
-            <li class="ms-3">
-                <a class="nav-link active" aria-current="page" href="../miCuenta.php">Mi cuenta <i class="fa fa-user"></i></a>
-            </li>
-            <li class="ms-3">
-                <a class="nav-link" href="../miCarro.php">Mi carro <i class="fa fa-shopping-cart"></i></a>
-            </li>
-            <li class="ms-3">
-                <a class="nav-link" href="#">Cerrar sesión <i class="fa fa-sign-out"></i></a>
-            </li>
+      
+        <?php
+                            if(isset($_SESSION["nombre"])){
+                                echo"<li class='nav-item'>
+                                    <a class='nav-link' href='controlador/logoutLogica.php'>Cerrar sesión 
+                                    <i class='fa fa-sign-out'></i></a>
+                                    </li>";}
+            ?>
         </ul>
     </div>
 
