@@ -22,6 +22,7 @@ if (mysqli_connect('localhost', 'root', '', 'computienda_web')) {
                     <th>Nombre</th>
                     <th>Foto Producto</th>
                     <th>Precio</th>
+                    <th>Editar</th>
                     <th>Borrar</th>
                 </tr>            
             ";
@@ -31,6 +32,7 @@ if (mysqli_connect('localhost', 'root', '', 'computienda_web')) {
             echo "<td>$fila[nombre]</a></td>";
             echo "<td><img src='../img/imgProductos/$fila[fotoProducto]' WIDTH=90 HEIGHT=70/></td>";
             echo "<td>$fila[precio]</a></td>";
+            echo "<td><a href='editarProducto.php?id_producto=" . $fila["id_producto"] . "'>Editar</a></td>";
             echo "<td><a href='bajaproducto.php?nombre=" . $fila["id_producto"] . "'>Borrar</a></td>";
             echo "</tr>";
         }
