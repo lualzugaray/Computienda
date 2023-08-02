@@ -1,13 +1,15 @@
 <footer>
 
     <div class="d-flex flex-column flex-sm-row justify-content-between py-4 border-top dark bg-black">
-        <a class="navbar-brand" href="index.php" style="font-size: xx-large;color: white; margin-left:10%">© 2023 COMPUTIENDA</a>
+        <a class="navbar-brand" href="http://localhost/Computienda/computienda/index.php" 
+        style="font-size: xx-large;color: white; margin-left:10%">© 2023 COMPUTIENDA</a>
         <img src="img/logo.png" alt="" style="height: 60px;">
         <ul class="list-unstyled d-flex dark bg-black" style="margin-right: 10%">
         <?php
                                 if(isset($_SESSION["nombre"])){
                                     echo"<li class='nav-item'>
-                                        <a class='nav-link' href='http://localhost/Computienda/computienda/miCarro.php'>Mi carro 
+                                        <a class='nav-link' href='http://localhost/Computienda/computienda/miCarro.php'>
+                                        Mi carro 
                                         <i class='fa fa-sign-out'></i></a>
                                         </li>";}
                             ?>
@@ -15,7 +17,8 @@
             <?php
                             if(isset($_SESSION["nombre"])){
                                 echo"<li class='nav-item'>
-                                    <a class='nav-link' href='controlador/logoutLogica.php'>Cerrar sesión 
+                                    <a class='nav-link' href='http://localhost/Computienda/computienda/controlador/logoutLogica.php'>
+                                    Cerrar sesión 
                                     <i class='fa fa-sign-out'></i></a>
                                     </li>";}
             ?>

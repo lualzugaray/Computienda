@@ -28,7 +28,7 @@ $emailLimpio = explode("@", $email)[0];
 
 
 // Verificar si el correo electrónico ya existe en la base de datos
-$consultaEmailExistente = "SELECT COUNT(*) as count FROM cliente WHERE email = '$email'";
+$consultaEmailExistente = "SELECT COUNT(*) as count FROM usuario WHERE email = '$email'";
 $resultado = mysqli_query($conexion, $consultaEmailExistente);
 $datos = mysqli_fetch_assoc($resultado);
 if ($datos['count'] > 0) {
@@ -54,8 +54,8 @@ if (!password_verify($contrasenaConfirmacion, $contrasena_hasheada)) {
 
 // Agrego el usuario del cliente a la BD
 
-$insertCliente = "INSERT INTO cliente (nombre, apellido, email, contrasena, tipo_usuario) VALUES ('$nombre','$apellido', 
-'$email', '$contrasena_hasheada',1)";
+$insertCliente = "INSERT INTO usuario (nombre, apellido, email, contrasena, tipo_usuario) VALUES ('$nombre','$apellido', 
+'$email', '$contrasena_hasheada',2)";
 
 
 if(mysqli_connect('localhost','root','','computienda_web')){

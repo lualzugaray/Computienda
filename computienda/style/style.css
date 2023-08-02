@@ -40,6 +40,8 @@ p {
     margin-bottom: 2rem;
 }
 
+a{text-decoration: none;}
+
 h1 {
     font-size: 2.6rem;
     font-weight: 600;
@@ -211,6 +213,7 @@ h1 {
 #formulario {
     margin: 0;
     display: block;
+    background-color: #25d366;
 }
 
 
