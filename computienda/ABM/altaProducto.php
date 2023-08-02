@@ -1,5 +1,14 @@
-<?php include_once "../header.php"; ?>
-<?php
+<?php 
+ session_start();
+
+
+
+ if(isset($_SESSION["tipo_usuario"]) && $_SESSION["tipo_usuario"] != 1 || !isset($_SESSION["tipo_usuario"])) {
+	 header("Location: ../index.php");
+	 die();
+ }
+ 
+ include_once "../header.php";    
 
 if(mysqli_connect('localhost','root','','computienda_web')){
 	

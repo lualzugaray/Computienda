@@ -1,9 +1,14 @@
 <?php 
  session_start();
-include_once "../header.php"; ?>
-<?php
 
-   
+
+
+if(isset($_SESSION["tipo_usuario"]) && $_SESSION["tipo_usuario"] != 1 || !isset($_SESSION["tipo_usuario"])) {
+    header("Location: ../index.php");
+    die();
+}
+
+include_once "../header.php";    
 if (isset($_SESSION["nombre"])) {
     $nombre = $_SESSION["nombre"];
     echo " <div id='bienvenido' class='d-flex container p-2'>
