@@ -60,7 +60,7 @@ if (mysqli_connect('localhost', 'root', '', 'computienda_web')) {
 }
 ?>
 
-<div class="formulario container p-3">
+<div class="formulario container p-3" id="agregar_producto">
     <h2><span>AGREGAR PRODUCTO<span></h2>
     <h4>DETALLES</h4>
     <form action="altaProducto.php" method="post" enctype="multipart/form-data">
@@ -73,7 +73,7 @@ if (mysqli_connect('localhost', 'root', '', 'computienda_web')) {
                     <input id="precio" type="num" class="form-control" name="precio"><br>
         </div>
         <div class="form-group">
-            <label for="archivo">Agregar Foto Producto en formato JPEG:</label><br><br>
+            <label for="archivo">Agregar Foto Producto en formato JPEG:</label><br>
             <input accept=".jpeg,.png" type="file" class="form-control" name="foto" id="archivo" required />
         </div>   
         <div class="form-group py-3">
