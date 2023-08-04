@@ -71,9 +71,13 @@ h1 {
 
 #bienvenido{
     background-color: #25d366;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 #bienvenido h2{
     font-family: 'Nova Square', cursive;
+    text-align: center;
+    margin: auto;
 }
 
 /* NAV */
@@ -213,7 +217,7 @@ h1 {
 #formulario {
     margin: 0;
     display: block;
-    background-color: #1c3e4b;
+    background-color: #10192f;
 }
 
 
@@ -316,11 +320,99 @@ h1 {
     font-size: 42px; /* Reducir el tamaño de fuente del icono en un 5% */
 }
 
-
-
-
 a i {
     border-bottom: none;
+}
+
+.container h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+table th{
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+table td img {
+    max-width: 90px;
+    max-height: 70px;
+}
+
+table a {
+    text-decoration: none;
+    color: #0373db;
+}
+
+table a:hover {
+    color: #05114b;
+}
+
+
+
+/* Estilos para el formulario de agregar producto */
+#agregar_producto form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#agregar_producto h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#agregar_producto h4{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+#agregar_producto h2 span{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#agregar_producto form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#agregar_producto form input[type="text"],
+#agregar_producto form input[type="number"],
+#agregar_producto form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#agregar_producto form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #0373db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#agregar_producto form input[type="submit"]:hover {
+    background-color: #05114b;
 }
 
 @media only screen and (min-width:320px) and (max-width:768px) {
