@@ -10,7 +10,7 @@ include_once "header.php";
                 $nombre = $_SESSION["nombre"];
                 $tipo_usuario = $_SESSION["tipo_usuario"];
                 echo " <div id='bienvenido' class='d-flex container p-2'>
-                <h2>Bienvenido/a $nombre! $tipo_usuario</h2>
+                <h2>Bienvenido/a $nombre!</h2>
                 </div>";
                 }
             ?>
