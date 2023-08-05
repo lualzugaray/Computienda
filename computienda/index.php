@@ -14,14 +14,14 @@ include_once "header.php";
                 </div>";
                 }
             ?>
-            <div class="col-6">
-                <a href="http://localhost/Computienda/computienda/controlador/logoutLogica.php" 
-                class="w3-bar-item w3-button w3-hover-blue  ">Cerrar Sesión</a>
+            <div id="menu_admin"><br>
+                <h2>¿Qué deseas hacer?</h2><br>
+                <h2><a href="http://localhost/Computienda/computienda/ABM/" class="w3-bar-item w3-button w3-hover-blue ">
+                   LISTADO DE PRODUCTOS</a></h2>
+                <h2><a href="http://localhost/Computienda/computienda/controlador/logoutLogica.php" 
+                class="w3-bar-item w3-button w3-hover-blue">CERRAR SESIÓN</a></h2>
             </div>
-            <div class="col-6">
-                <a href="http://localhost/Computienda/computienda/ABM/" class="w3-bar-item w3-button w3-hover-blue ">
-                    Página de Admin</a>
-            </div>
+
     <?php else: ?>
 
     <section id="cover">
