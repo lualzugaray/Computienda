@@ -360,9 +360,8 @@ table a:hover {
     color: #05114b;
 }
 
+/* AGREGAR PRODUCTO */
 
-
-/* Estilos para el formulario de agregar producto */
 #agregar_producto form {
     max-width: 500px;
     margin: 0 auto;
@@ -415,7 +414,8 @@ table a:hover {
     background-color: #05114b;
 }
 
-/* Estilos para el formulario de agregar producto */
+/* EDITAR PRODUCTO */
+
 #editar_producto form {
     max-width: 500px;
     margin: 0 auto;
@@ -470,6 +470,13 @@ table a:hover {
 }
 
 #alert_prod h2{
+    text-align: center;
+    margin: revert;
+}
+
+/* MENU ADMIN */
+
+#menu_admin h2{
     text-align: center;
     margin: revert;
 }
