@@ -17,7 +17,7 @@ include_once "header.php";
 
                             $apellido = isset($_SESSION["apellido"]) ? $_SESSION["apellido"] : 'Apellido no disponible';
 
-                            echo "<h2>$nombre $apellido</h2>";
+                            echo "<h3>$nombre $apellido</h3>";
 
                         }
                         ?>
