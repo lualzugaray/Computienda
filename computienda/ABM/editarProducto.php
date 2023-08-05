@@ -42,8 +42,10 @@ if (mysqli_connect('localhost', 'root', '', 'computienda_web')) {
             }
 
             if ($resultado = mysqli_query($con, $consulta)) {
-                echo "<h2 style='margin: revert;'><span>Producto: $nombre editado correctamente</span></h2>";
+                echo "<div id='alert_prod'>";
+                echo "<h2><span>Producto: $nombre editado correctamente</span></h2>";
                 echo "<h2><span><a href='index.php'>VOLVER AL LISTADO DE PRODUCTOS</a></span></h2>";
+                echo "</div>";
             } else {
                 echo "<h1>La consulta tiene errores</h1>";
             }
@@ -56,25 +58,25 @@ if (mysqli_connect('localhost', 'root', '', 'computienda_web')) {
 
             if ($fila) {
                 ?>
-                <div class="formulario">
+                <div class="formulario" id="editar_producto">
                     <h2><span>EDITAR PRODUCTO</span></h2>
                     <h4>DETALLES</h4>
                     <form action="" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="id_producto" value="<?php echo $fila["id_producto"]; ?>">
                         <div class="form-group">
                             <label for="nombre" class="form-label">Título</label>
-                            <input id="nombre" type="text" class="form-control" name="nombre" value="<?php echo $fila["nombre"]; ?>"><br>
+                            <input id="nombre" type="text" class="form-control" name="nombre" value="<?php echo $fila["nombre"]; ?>">
                         </div>
                         <div class="form-group">
                             <label for="precio" class="form-label">Precio</label>
-                            <input id="precio" type="number" class="form-control" name="precio" value="<?php echo $fila["precio"]; ?>"><br>
+                            <input id="precio" type="number" class="form-control" name="precio" value="<?php echo $fila["precio"]; ?>">
                         </div>
                         <div class="form-group">
-                            <label for="archivo">Foto actual:</label><br>
+                            <label for="archivo">Foto actual:</label>
                             <img src="../img/imgProductos/<?php echo $fila["foto_producto"]; ?>" width="90" height="70" />
                         </div>
                         <div class="form-group">
-                            <label for="archivo">Cambiar Foto Producto en formato JPEG:</label><br><br>
+                            <label for="archivo">Cambiar Foto Producto en formato JPEG:</label>
                             <input accept=".jpeg,.png" type="file" class="form-control" name="foto" id="archivo" />
                         </div>
                         <div class="form-group">
@@ -90,6 +92,7 @@ if (mysqli_connect('localhost', 'root', '', 'computienda_web')) {
     }
 }
 ?>
+
 
 <section class="footer" style="position: fixed;left: 0;bottom: 0;width: 100%;background-color: #000000;text-align: center;">
     <?php
