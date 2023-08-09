@@ -15,7 +15,7 @@ include_once "header.php";
                 }
             ?>
             <div id="menu_admin"><br>
-                <h2>¿Qué deseas hacer?</h2><br>
+                <h2>¿Qué desea hacer?</h2><br>
                 <h2><a href="http://localhost/Computienda/computienda/ABM/" class="w3-bar-item w3-button w3-hover-blue ">
                    LISTADO DE PRODUCTOS</a></h2>
                 <h2><a href="http://localhost/Computienda/computienda/controlador/logoutLogica.php" 
